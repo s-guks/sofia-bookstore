@@ -1,32 +1,31 @@
 
 
+<ul class="heroes">
+    <li *ngFor="let book of books">
+
 <mat-card class="book-card" cdkDrag>
     <mat-card-header> 
-        <mat-card-title>Tress of the Emerald Sea</mat-card-title>
-        <mat-card-subtitle>Brandon Sanderson</mat-card-subtitle>
+        <mat-card-title>{{book.title}}</mat-card-title>
+        <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
     </mat-card-header>
 
     <br>
 
     <mat-card-content>
-        <img mat-card-image src="assets/bookcover1.jpeg" alt ="" width = 200 class="center"/>
+        <img mat-card-image src={{book.cover}} alt ="" width = 200 class="center"/>
         <br>
         <p>
-            The only life Tress has known on her island home in an emerald-green ocean 
-            has been a simple one, with the simple pleasures of collecting cups brought 
-            by sailors from faraway lands and listening to stories told by her friend 
-            Charlie. But when his father takes him on a voyage to find a bride and 
-            disaster strikes, Tress must stow away on a ship and seek the Sorceress of 
-            the deadly Midnight Sea. Amid the spore oceans where pirates abound, can 
-            Tress leave her simple life behind and make her own place sailing a sea 
-            where a single drop of water can mean instant death?
+            {{book.desc}}
         </p>
     </mat-card-content>
 
     <mat-card-actions>
-        <a href="https://www.amazon.com/Tress-Emerald-Sea-Brandon-Sanderson/dp/1250899656" target="_blank"><button mat-button>Buy Now</button></a>
-       <a href="https://www.brandonsanderson.com/" target="_blank"><button mat-button>Author Website</button></a>
+        <a href={{book.buy}} target="_blank"><button mat-button>Buy Now</button></a>
+       <a href={{book.bio}} target="_blank"><button mat-button>Author Website</button></a>
     </mat-card-actions>
 </mat-card>
+
+</li>
+</ul>
 
 
