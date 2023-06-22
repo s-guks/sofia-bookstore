@@ -10,10 +10,12 @@
     width: 50%;
   }
 
-  .flex-container {
-    display: flex;
+  .books {
+    list-style-type: none 
   }
 
-  .books {
-    list-style-type:none 
+  .list {
+    display: flex;
+    background: white;
+    overflow: hidden;
   }

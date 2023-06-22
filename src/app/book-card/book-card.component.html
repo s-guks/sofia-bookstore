@@ -1,7 +1,9 @@
 
 
 <ul class="books">
-    <div class="flex-container">
+    
+        <div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+
     <li *ngFor="let book of books">
 
 <mat-card class="book-card" cdkDrag>
