@@ -1,11 +1,6 @@
 
 .book-card {
-    max-width: 600px;
-  }
-  
-  .book-header-image {
-    background-image: "assets/bookcover1.jpeg";
-    background-size: cover;
+    max-width: 300px;
   }
 
   .center {
@@ -13,4 +8,12 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+  }
+
+  .flex-container {
+    display: flex;
+  }
+
+  .books {
+    list-style-type:none 
   }
