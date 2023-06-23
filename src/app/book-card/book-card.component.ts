@@ -3,7 +3,8 @@ import { Book } from '../book';
 import { BOOKS } from '../mock-books';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import {CdkDrag} from '@angular/cdk/drag-drop';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/drag-drop';
 import { FormsModule } from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
@@ -12,11 +13,13 @@ import {CommonModule} from '@angular/common';
   templateUrl: './book-card.component.html',
   styleUrls: ['./book-card.component.scss'],
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, CdkDrag, FormsModule, CommonModule],
+  imports: [MatCardModule, MatButtonModule, MatExpansionModule, CdkDropList, CdkDrag, FormsModule, CommonModule],
 })
 export class BookCardComponent{
 
     books = BOOKS;
 
+    drop(event: CdkDragDrop<string[]>) {
+      moveItemInArray(this.books, event.previousIndex, event.currentIndex);
+  }
 }
-
