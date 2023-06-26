@@ -1,0 +1,49 @@
+<h1 class="title">Sofia's Bookstore</h1>
+<app-menu></app-menu>
+
+<br>
+<br>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>ISBN</mat-label>
+      <input matInput [(ngModel)]="ISBN" name="ISBN">
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="newBook.title" name="title">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Author</mat-label>
+        <input matInput [(ngModel)]="newBook.author" name="author">
+      </mat-form-field></td>
+    </tr></table>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      <input matInput [(ngModel)]="newBook.desc" name="desc">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Cover Image</mat-label>
+      <input matInput [(ngModel)]="newBook.cover" name="cover">
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Purchase Link</mat-label>
+        <input matInput [(ngModel)]="newBook.buy" name="buy">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Author Website</mat-label>
+        <input matInput [(ngModel)]="newBook.bio" name="bio">
+      </mat-form-field></td>
+    </tr></table>
+
+  </form>
+
+  <div class="button-ex">
+  <button (click)="storeBook()">Store to Database</button>
+  </div>

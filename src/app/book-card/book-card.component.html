@@ -1,11 +1,9 @@
 
-<button (click)="storeTolkien()">Click me</button>
-
 <ul class="books">
     
         <div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
 
-    <li *ngFor="let book of books">
+    <li *ngFor="let book of books$ | async">
 
 <mat-card class="book-card" cdkDrag>
     <mat-card-header> 
