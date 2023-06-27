@@ -17,12 +17,19 @@ import { CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { BookInputComponent } from './book-input/book-input.component';
+import { MenuComponent } from './menu/menu.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BookCardComponent
+    BookCardComponent,
+    BookInputComponent,
+    MenuComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -35,8 +42,11 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatCardModule,
     MatButtonModule, 
     MatExpansionModule, 
+    MatMenuModule,
     CdkDropList, 
-    CdkDrag
+    CdkDrag,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
