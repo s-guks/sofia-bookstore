@@ -1,30 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Book } from '../book';
-import { BOOKS } from '../mock-books';
-import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/drag-drop';
-import { BooksService } from '../services/books.service';
-import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-book-card',
   templateUrl: './book-card.component.html',
   styleUrls: ['./book-card.component.scss']
 })
-export class BookCardComponent implements OnInit {
+export class BookCardComponent {
 
-    books = BOOKS;
-    books$: Observable<Book[]> = of();
+  @Input() book = {
+    title: "",
+    author: "",
+    cover: "",
+    desc: "",
+    bio: "",
+    buy: ""
+    }; // decorate the property with @Input()
 
-    constructor(private booksService: BooksService) {
-      
-    }
-
-    ngOnInit(): void {
-      this.books$ = this.booksService.readBooks();
-    }
-
-    drop(event: CdkDragDrop<string[]>) {
-      moveItemInArray(this.books, event.previousIndex, event.currentIndex);
-    }
+    //drop(event: CdkDragDrop<string[]>) {
+    //  moveItemInArray(this.books, event.previousIndex, event.currentIndex);
+    //}
 
 }

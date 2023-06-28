@@ -1,0 +1,12 @@
+
+
+
+<ul class="books">
+    
+    <li *ngFor="let currentBook of books$ | async">
+
+        <app-book-card [book] = 'currentBook'> </app-book-card>
+
+    </li>
+</ul> 
+

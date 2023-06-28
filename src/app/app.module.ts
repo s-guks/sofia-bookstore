@@ -22,6 +22,7 @@ import { MenuComponent } from './menu/menu.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AllBooksComponent } from './all-books/all-books.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HomeComponent,
     BookCardComponent,
     BookInputComponent,
-    MenuComponent
+    MenuComponent,
+    AllBooksComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

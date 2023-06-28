@@ -1,11 +1,7 @@
 
-<ul class="books">
-    
-        <div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
 
-    <li *ngFor="let book of books$ | async">
 
-<mat-card class="book-card" cdkDrag>
+<mat-card class="book-card">
     <mat-card-header> 
         <mat-card-title>{{book.title}}</mat-card-title>
         <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
@@ -32,8 +28,5 @@
     </mat-card-actions>
 </mat-card>
 
-</li>
-</div>
-</ul>
 
 
