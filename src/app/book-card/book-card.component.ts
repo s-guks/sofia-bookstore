@@ -6,9 +6,11 @@ import { Book } from '../book';
   templateUrl: './book-card.component.html',
   styleUrls: ['./book-card.component.scss']
 })
-export class BookCardComponent {
+export class BookCardComponent implements OnInit {
 
-  @Input() book = {
+  panelOpenState = false;
+
+  @Input() book: Book = {
     title: "",
     author: "",
     cover: "",
@@ -16,6 +18,14 @@ export class BookCardComponent {
     bio: "",
     buy: ""
     }; // decorate the property with @Input()
+
+    constructor() {
+      
+    }
+
+    ngOnInit(): void {
+      //console.log(this.book);
+    }
 
     //drop(event: CdkDragDrop<string[]>) {
     //  moveItemInArray(this.books, event.previousIndex, event.currentIndex);

@@ -1,7 +1,7 @@
 
 
 
-<mat-card class="book-card">
+<mat-card [ngStyle]="{'height': (panelOpenState==false) ? '380px' : 'fit-content'}" class = "book-card">
     <mat-card-header> 
         <mat-card-title>{{book.title}}</mat-card-title>
         <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
@@ -10,9 +10,10 @@
     <br>
 
     <mat-card-content>
-        <img mat-card-image src={{book.cover}} alt ="" width = 200 class="center"/>
+        <img mat-card-image src={{book.cover}} alt ="" width = 100px class="center"/>
         <br>
-        <mat-expansion-panel >
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 Read More

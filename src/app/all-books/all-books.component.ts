@@ -14,6 +14,7 @@ export class AllBooksComponent implements OnInit{
     
     //books = BOOKS;
     books$: Observable<Book[]> = of();
+    i = 0;
 
     constructor(private booksService: BooksService) {
       
@@ -21,6 +22,7 @@ export class AllBooksComponent implements OnInit{
 
     ngOnInit(): void {
       this.books$ = this.booksService.readBooks();
+      
     }
 
 }
