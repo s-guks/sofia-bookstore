@@ -20,6 +20,7 @@ export class SortFilterComponent implements OnInit{
   Genre: string[] = [];
   Tone: string[] = [];
   i: number = 0;
+  search: string = "";
   
   ngOnInit(): void {
     this.books$ = this.booksService.readBooks();
@@ -38,5 +39,13 @@ export class SortFilterComponent implements OnInit{
     }
     return true;
   }
+
+    searchTOrA(book: Book): boolean {
+      if(book.title.toUpperCase().match(this.search.toUpperCase()) || book.author.toUpperCase().match(this.search.toUpperCase())) {
+        return true;
+      }
+      else
+        return false;
+    }
 
 }

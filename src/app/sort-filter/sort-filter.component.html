@@ -31,10 +31,17 @@
     </mat-select>
   </mat-form-field>
 
+  <mat-form-field class="full-width2">
+    <mat-label>Search Title or Author</mat-label>
+    <input matInput [(ngModel)]="search" name="search">
+  </mat-form-field>
+
   <ul class="books">
   <tr *ngFor="let currentBook of books$ | async">
     <div *ngIf = tags(currentBook)>
-        <app-book-card [book] = "currentBook"> </app-book-card> 
+        <div *ngIf = searchTOrA(currentBook)>
+            <app-book-card [book] = "currentBook"> </app-book-card>
+        </div> 
     </div>
   </tr></ul>
 
