@@ -24,7 +24,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 
-import { AllBooksComponent } from './all-books/all-books.component';
+import { SortFilterComponent } from './sort-filter/sort-filter.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { AllBooksComponent } from './all-books/all-books.component';
     BookCardComponent,
     BookInputComponent,
     MenuComponent,
-    AllBooksComponent
+    SortFilterComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

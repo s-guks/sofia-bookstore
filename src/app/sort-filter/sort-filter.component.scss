@@ -1,0 +1,30 @@
+.full-width {
+    width: 100%;
+    max-width: 500px;
+    margin-left: 20px;
+  }
+
+.book-card {
+    max-width: 300px;
+    display: block;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .books {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .list {
+    display: flex;
+    background: white;
+    
+  }
+  
