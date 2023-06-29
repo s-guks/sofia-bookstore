@@ -1,11 +1,7 @@
 
-<ul class="books">
-    
-        <div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
 
-    <li *ngFor="let book of books$ | async">
 
-<mat-card class="book-card" cdkDrag>
+<mat-card [ngStyle]="{'height': (panelOpenState==false) ? '380px' : 'fit-content'}" class = "book-card">
     <mat-card-header> 
         <mat-card-title>{{book.title}}</mat-card-title>
         <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
@@ -14,9 +10,10 @@
     <br>
 
     <mat-card-content>
-        <img mat-card-image src={{book.cover}} alt ="" width = 200 class="center"/>
+        <img mat-card-image src={{book.cover}} alt ="" width = 100px class="center"/>
         <br>
-        <mat-expansion-panel >
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 Read More
@@ -32,8 +29,5 @@
     </mat-card-actions>
 </mat-card>
 
-</li>
-</div>
-</ul>
 
 
