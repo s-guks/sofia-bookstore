@@ -42,8 +42,68 @@
       </mat-form-field></td>
     </tr></table>
 
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+      <mat-label>Tag 1 (Genre)</mat-label>
+      <mat-select [(value)]="newBook.tag1">
+        <mat-option>None</mat-option>
+        <mat-option value="Classics">Classics</mat-option>
+        <mat-option value="Contemporary">Contemporary</mat-option>
+        <mat-option value="Fantasy">Fantasy</mat-option>
+        <mat-option value="Horror">Horror</mat-option>
+        <mat-option value="Literary">Literary</mat-option>
+        <mat-option value="Romance">Romance</mat-option>
+        <mat-option value="Science Fiction">Science Fiction</mat-option>
+        <mat-option value="Young Adult">Young Adult</mat-option>
+      </mat-select>
+    </mat-form-field> </td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Tag 2 (Tone or Second Genre)</mat-label>
+      <mat-select [(value)]="newBook.tag2">
+        <mat-option>None</mat-option>
+        <mat-option value="Adventurous">Adventurous</mat-option>
+        <mat-option value="Challenging">Challenging</mat-option>
+        <mat-option value="Dark">Dark</mat-option>
+        <mat-option value="Emotional">Emotional</mat-option>
+        <mat-option value="Funny">Funny</mat-option>
+        <mat-option value="Hopeful">Hopeful</mat-option>
+        <mat-option value="Lighthearted">Lighthearted</mat-option>
+        <mat-option value="Mysterious">Mysterious</mat-option>
+        <mat-option value="Reflective">Reflective</mat-option>
+        <mat-option value="Sad">Sad</mat-option>
+        <mat-option value="Tense">Tense</mat-option>
+        <mat-option value="Classics">Classics</mat-option>
+        <mat-option value="Contemporary">Contemporary</mat-option>
+        <mat-option value="Fantasy">Fantasy</mat-option>
+        <mat-option value="Horror">Horror</mat-option>
+        <mat-option value="Literary">Literary</mat-option>
+        <mat-option value="Romance">Romance</mat-option>
+        <mat-option value="Science Fiction">Science Fiction</mat-option>
+        <mat-option value="Young Adult">Young Adult</mat-option>
+      </mat-select>
+    </mat-form-field></td>
+  </tr></table>
+
+    <mat-form-field>
+      <mat-label>Tag 3 (Tone)</mat-label>
+      <mat-select [(value)]="newBook.tag3">
+        <mat-option>None</mat-option>
+        <mat-option value="Adventurous">Adventurous</mat-option>
+        <mat-option value="Challenging">Challenging</mat-option>
+        <mat-option value="Dark">Dark</mat-option>
+        <mat-option value="Emotional">Emotional</mat-option>
+        <mat-option value="Funny">Funny</mat-option>
+        <mat-option value="Hopeful">Hopeful</mat-option>
+        <mat-option value="Lighthearted">Lighthearted</mat-option>
+        <mat-option value="Mysterious">Mysterious</mat-option>
+        <mat-option value="Reflective">Reflective</mat-option>
+        <mat-option value="Sad">Sad</mat-option>
+        <mat-option value="Tense">Tense</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-button (click)="storeBook()" class="button-ex">Store to Database</button>
+
   </form>
 
-  <div class="button-ex">
-  <button (click)="storeBook()">Store to Database</button>
-  </div>
+  <br> <br>

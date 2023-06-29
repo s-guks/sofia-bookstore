@@ -22,7 +22,10 @@ import { MenuComponent } from './menu/menu.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { AllBooksComponent } from './all-books/all-books.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
+
+import { SortFilterComponent } from './sort-filter/sort-filter.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,7 @@ import { AllBooksComponent } from './all-books/all-books.component';
     BookCardComponent,
     BookInputComponent,
     MenuComponent,
-    AllBooksComponent
+    SortFilterComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -48,7 +51,9 @@ import { AllBooksComponent } from './all-books/all-books.component';
     CdkDropList, 
     CdkDrag,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

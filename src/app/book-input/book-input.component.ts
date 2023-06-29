@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 import { BooksService } from '../services/books.service';
 import { Book } from '../book';
 import { BOOKS } from '../mock-books';
@@ -10,7 +11,7 @@ import { BOOKS } from '../mock-books';
   templateUrl: './book-input.component.html',
   styleUrls: ['./book-input.component.scss']
 })
-export class BookInputComponent {
+export class BookInputComponent implements OnChanges{
 
   ISBN: string = "";
   newBook: Book = {
@@ -19,8 +20,11 @@ export class BookInputComponent {
     cover: "",
     desc: "",
     bio: "",
-    buy: ""
-};
+    buy: "",
+    tag1: "",
+    tag2: "",
+    tag3: ""
+  };
 
   constructor (private booksService: BooksService)
   { 
@@ -32,5 +36,8 @@ export class BookInputComponent {
     this.booksService.storeBook(this.ISBN, this.newBook);
   }
 
+  ngOnChanges() {
+
+  }
 
 }

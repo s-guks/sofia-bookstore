@@ -16,7 +16,10 @@ export class BookCardComponent implements OnInit {
     cover: "",
     desc: "",
     bio: "",
-    buy: ""
+    buy: "",
+    tag1: "",
+    tag2: "",
+    tag3: ""
     }; // decorate the property with @Input()
 
     constructor() {

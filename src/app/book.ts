@@ -5,4 +5,7 @@ export interface Book {
     desc: string;
     bio: string;
     buy: string;
+    tag1: string;
+    tag2: string;
+    tag3: string;
   }
