@@ -22,6 +22,8 @@ import { MenuComponent } from './menu/menu.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+
 import { AllBooksComponent } from './all-books/all-books.component';
 
 @NgModule({
@@ -48,7 +50,8 @@ import { AllBooksComponent } from './all-books/all-books.component';
     CdkDropList, 
     CdkDrag,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

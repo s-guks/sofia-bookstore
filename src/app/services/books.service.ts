@@ -20,7 +20,10 @@ export class BooksService {
         cover: book.cover,
         desc: book.desc,
         bio: book.bio,
-        buy: book.buy
+        buy: book.buy,
+        tag1: book.tag1, 
+        tag2: book.tag2, 
+        tag3: book.tag3
     })
   }
 
