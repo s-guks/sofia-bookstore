@@ -1,4 +1,5 @@
-<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+
+<!--<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu" margin-left=10px>
   <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -8,5 +9,10 @@
     <button mat-menu-item>
       <span routerLink="/book-input">Admin Screen</span>
     </button> 
-  </mat-menu>
+  </mat-menu>-->
+
+  <mat-button-toggle-group [(ngModel)]="page" aria-label="page">
+    <mat-button-toggle routerLink="/home" routerLinkActive="active" >Home</mat-button-toggle>
+    <mat-button-toggle routerLink="/book-input" routerLinkActive="active">Admin Screen</mat-button-toggle>
+  </mat-button-toggle-group>
   
