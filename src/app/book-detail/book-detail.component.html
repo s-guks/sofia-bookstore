@@ -1,3 +1,41 @@
-<p>book-detail works!</p>
+
+
+
+<mat-card >
+    <mat-card-header> 
+        <mat-card-title>{{book.title}}</mat-card-title>
+        <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <br>
+
+    <mat-card-content>
+        <img mat-card-image src={{book.cover}} alt ="" width = 100px class="center"/>
+        <br>
+        
+        
+
+        <!--<mat-expansion-panel (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Read More
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{book.desc}}</p>
+          </mat-expansion-panel>-->
+
+        <br> <br>
+        <p>
+          #{{book.tag1}}, #{{book.tag2}}, #{{book.tag3}}
+        </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <a href={{book.buy}} target="_blank"><button mat-button>Buy Now</button></a>
+       <a href={{book.bio}} target="_blank"><button mat-button>Author Website</button></a>
+    </mat-card-actions>
+</mat-card>
+
 
 

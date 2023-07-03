@@ -1,19 +1,19 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Book } from '../book';
+import { Observable } from 'rxjs';
+import { BookDetailService } from '../services/book-detail.service';
+
 
 @Component({
   selector: 'app-book-detail',
   templateUrl: './book-detail.component.html',
   styleUrls: ['./book-detail.component.scss']
 })
-export class BookDetailComponent {
+export class BookDetailComponent implements OnInit{
 
-  constructor(private router: Router) {
-    
-  }
-  
-  @Input() book: Book = {
+  book: Book = {
+    isbn: "",
     title: "",
     author: "",
     cover: "",
@@ -24,6 +24,22 @@ export class BookDetailComponent {
     tag2: "",
     tag3: ""
   };
+  
+  constructor(private bookDetailService: BookDetailService, private afs: AngularFirestore) { 
+    //this.thisbook = this.bookDetailService.readBook();
+   }
+ 
+  queryString = window.location.search;
+  urlParams = new URLSearchParams(this.queryString);
+  isbn = this.urlParams.get('isbn');
+
+   ngOnInit(): void {
+    //this.book = this.bookDetailService.readBook(this.isbn);
+  }
+
+  readBook() {
+    this.bookDetailService.readBook(this.isbn);
+    }
 
   /*
   onBookClick(room: any) {

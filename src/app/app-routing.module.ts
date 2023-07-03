@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'home', component: SortFilterComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'book-input', component: BookInputComponent },
-  { path: 'room/:id', component: BookDetailComponent }
+  { path: 'book/isbn=:isbn', component: BookDetailComponent }
 ];
 
 @NgModule({

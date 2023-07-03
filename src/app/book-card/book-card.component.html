@@ -12,7 +12,8 @@
     <mat-card-content>
         <img mat-card-image src={{book.cover}} alt ="" width = 100px class="center"/>
         <br>
-        <button mat-button class="button-center">Read More</button>
+        <a (click)="onReadMore(book)"><button mat-button class="button-center">Read More</button></a>
+        
 
         <!--<mat-expansion-panel (opened)="panelOpenState = true"
                               (closed)="panelOpenState = false">

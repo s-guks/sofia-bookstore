@@ -12,6 +12,7 @@ export class BookCardComponent implements OnInit {
   panelOpenState = false;
 
   @Input() book: Book = {
+    isbn: "",
     title: "",
     author: "",
     cover: "",
@@ -28,8 +29,14 @@ export class BookCardComponent implements OnInit {
     }
 
     onReadMore(book: any) {
-      this.router.navigate([book.title]);
+      this.router.navigate(["book", book.isbn]);
     }
+
+    /* 
+    onAvailableClick(room: any) {
+      this.router.navigate(['room', room.id, this.date, this.startValue.toString(), this.endValue.toString()]);
+    }
+    */
 
     ngOnInit(): void {
       //console.log(this.book);

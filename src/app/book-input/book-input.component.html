@@ -5,7 +5,7 @@
 <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>ISBN</mat-label>
-      <input matInput [(ngModel)]="ISBN" name="ISBN">
+      <input matInput [(ngModel)]="ISBN" [(ngModel)]= "newBook.isbn" name="ISBN">
     </mat-form-field>
 
     <table class="example-full-width" cellspacing="0"><tr>
