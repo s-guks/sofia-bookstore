@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Book } from '../book';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-card',
@@ -22,16 +23,16 @@ export class BookCardComponent implements OnInit {
     tag3: ""
     }; // decorate the property with @Input()
 
-    constructor() {
+    constructor(private router: Router) {
       
+    }
+
+    onReadMore(book: any) {
+      this.router.navigate([book.title]);
     }
 
     ngOnInit(): void {
       //console.log(this.book);
     }
-
-    //drop(event: CdkDragDrop<string[]>) {
-    //  moveItemInArray(this.books, event.previousIndex, event.currentIndex);
-    //}
 
 }

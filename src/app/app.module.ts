@@ -29,6 +29,7 @@ import { SortFilterComponent } from './sort-filter/sort-filter.component';
 import { HeaderComponent } from './header/header.component';
 
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     BookInputComponent,
     MenuComponent,
     SortFilterComponent,
-    HeaderComponent
+    HeaderComponent,
+    BookDetailComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

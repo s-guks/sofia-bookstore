@@ -12,7 +12,9 @@
     <mat-card-content>
         <img mat-card-image src={{book.cover}} alt ="" width = 100px class="center"/>
         <br>
-        <mat-expansion-panel (opened)="panelOpenState = true"
+        <button mat-button class="button-center">Read More</button>
+
+        <!--<mat-expansion-panel (opened)="panelOpenState = true"
                               (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
               <mat-panel-title>
@@ -20,8 +22,9 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <p>{{book.desc}}</p>
-          </mat-expansion-panel>
-        <br>
+          </mat-expansion-panel>-->
+
+        <br> <br>
         <p>
           #{{book.tag1}}, #{{book.tag2}}, #{{book.tag3}}
         </p>
