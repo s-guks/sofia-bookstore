@@ -1,41 +1,49 @@
 
 
-
-<mat-card >
-    <mat-card-header> 
-        <mat-card-title>{{book.title}}</mat-card-title>
-        <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
-    </mat-card-header>
-
-    <br>
-
-    <mat-card-content>
-        <img mat-card-image src={{book.cover}} alt ="" width = 100px class="center"/>
-        <br>
+<ul class="books">
+    <tr *ngFor="let currentBook of books$ | async">
+      <div *ngIf = correctBook(currentBook)>
+        <mat-card >
+            <mat-card-header> 
+                <mat-card-title>{{currentBook.title}}</mat-card-title>
+                <mat-card-subtitle>{{currentBook.author}}</mat-card-subtitle>
+            </mat-card-header>
         
+            <br>
         
+            <mat-card-content>
+                <img mat-card-image src={{currentBook.cover}} alt ="" width = 100px class="center"/>
+                <br>
+                
+                
+        
+                <!--<mat-expansion-panel (opened)="panelOpenState = true"
+                                      (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Read More
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>{{book.desc}}</p>
+                  </mat-expansion-panel>-->
+        
+                <br> <br>
+                <p>
+                  #{{currentBook.tag1}}, #{{currentBook.tag2}}, #{{currentBook.tag3}}
+                </p>
+            </mat-card-content>
+        
+            <mat-card-actions>
+                <a href={{currentBook.buy}} target="_blank"><button mat-button>Buy Now</button></a>
+               <a href={{currentBook.bio}} target="_blank"><button mat-button>Author Website</button></a>
+            </mat-card-actions>
+        </mat-card>
+      </div>
+    </tr></ul>
 
-        <!--<mat-expansion-panel (opened)="panelOpenState = true"
-                              (closed)="panelOpenState = false">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Read More
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p>{{book.desc}}</p>
-          </mat-expansion-panel>-->
 
-        <br> <br>
-        <p>
-          #{{book.tag1}}, #{{book.tag2}}, #{{book.tag3}}
-        </p>
-    </mat-card-content>
 
-    <mat-card-actions>
-        <a href={{book.buy}} target="_blank"><button mat-button>Buy Now</button></a>
-       <a href={{book.bio}} target="_blank"><button mat-button>Author Website</button></a>
-    </mat-card-actions>
-</mat-card>
+
 
 
 

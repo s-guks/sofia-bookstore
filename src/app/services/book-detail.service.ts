@@ -37,7 +37,7 @@ export class BookDetailService {
   }
   */
 
-  readBook(thisIsbn: string): Book {
+  //readBook(thisIsbn: string): Book {
     
     //const bookDetail = this.afs.collection<Book>("books", (ref)=>ref.where("isbn", "==", thisIsbn)).get();
         //.subscribe(data=>data.forEach(el=>console.log(el.data())));
@@ -45,10 +45,10 @@ export class BookDetailService {
     
     
     
-    this.book.isbn = thisIsbn;
+    //this.book.isbn = thisIsbn;
 
     
-    return (this.afs.firestore.doc(`books/${thisIsbn}`).get())
+    //return (this.afs.firestore.doc(`books/${thisIsbn}`).get());
     
 
 
@@ -67,5 +67,5 @@ export class BookDetailService {
     this.book.tag3 =  this.afs.collection<Book>("books").doc(isbn).get("title");
     */
     //return this.book;
-  } 
+ // } 
 }

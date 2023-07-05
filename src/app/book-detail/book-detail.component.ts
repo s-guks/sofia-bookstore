@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Book } from '../book';
-import { Observable } from 'rxjs';
-import { BookDetailService } from '../services/book-detail.service';
+import { Observable, of } from 'rxjs';
+import { BooksService } from '../services/books.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { BookDetailService } from '../services/book-detail.service';
   styleUrls: ['./book-detail.component.scss']
 })
 export class BookDetailComponent implements OnInit{
+
+  books$: Observable<Book[]> = of();
 
   book: Book = {
     isbn: "",
@@ -24,22 +27,33 @@ export class BookDetailComponent implements OnInit{
     tag2: "",
     tag3: ""
   };
+
+  i: number = 0;
   
-  constructor(private bookDetailService: BookDetailService, private afs: AngularFirestore) { 
+  constructor(private router: Router, private booksService: BooksService, private route: ActivatedRoute) { 
     //this.thisbook = this.bookDetailService.readBook();
    }
  
-  queryString = window.location.search;
-  urlParams = new URLSearchParams(this.queryString);
-  isbn = this.urlParams.get('isbn');
+  //queryString = window.location.search;
+  //urlParams = new URLSearchParams(this.queryString);
+  isbn = this.route.snapshot.paramMap.get('isbn');
 
    ngOnInit(): void {
-    //this.book = this.bookDetailService.readBook(this.isbn);
+    this.books$ = this.booksService.readBooks();
   }
 
+  correctBook(book: Book): boolean {
+    if (this.isbn == book.isbn) {
+      return true;
+    }
+    return false;
+  }
+
+  /*
   readBook() {
     this.bookDetailService.readBook(this.isbn);
     }
+    */
 
   /*
   onBookClick(room: any) {
