@@ -1,7 +1,7 @@
 
 
 
-<mat-card [ngStyle]="{'height': (panelOpenState==false) ? '420px' : 'fit-content'}" class = "book-card">
+<mat-card [ngStyle]="{'height': (panelOpenState==false) ? '430px' : 'fit-content'}" class = "book-card">
     <mat-card-header> 
         <mat-card-title>{{book.title}}</mat-card-title>
         <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
@@ -12,7 +12,10 @@
     <mat-card-content>
         <img mat-card-image src={{book.cover}} alt ="" width = 100px class="center"/>
         <br>
-        <mat-expansion-panel (opened)="panelOpenState = true"
+        <a (click)="onReadMore(book)"><button mat-button class="button-center">Read More</button></a>
+        
+
+        <!--<mat-expansion-panel (opened)="panelOpenState = true"
                               (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
               <mat-panel-title>
@@ -20,8 +23,9 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <p>{{book.desc}}</p>
-          </mat-expansion-panel>
-        <br>
+          </mat-expansion-panel>-->
+
+        <br> <br>
         <p>
           #{{book.tag1}}, #{{book.tag2}}, #{{book.tag3}}
         </p>

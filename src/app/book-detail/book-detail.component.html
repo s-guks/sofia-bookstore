@@ -1,0 +1,40 @@
+
+
+<ul class="books">
+    <tr *ngFor="let currentBook of books$ | async">
+      <div *ngIf = correctBook(currentBook)>
+
+        <div class = "list">
+
+        <img src={{currentBook.cover}} alt ="" class = "image"/>
+
+
+        <mat-card class = "book-card">
+            <mat-card-header> 
+                <mat-card-title>{{currentBook.title}}</mat-card-title>
+                <mat-card-subtitle>{{currentBook.author}}</mat-card-subtitle>
+            </mat-card-header>
+            <br>
+            <mat-card-content>
+                <p>{{currentBook.desc}}</p>
+                <br> <br>
+                <p>
+                  #{{currentBook.tag1}}, #{{currentBook.tag2}}, #{{currentBook.tag3}}
+                </p>
+                <br>
+            </mat-card-content>
+            <mat-card-actions>
+                <a href={{currentBook.buy}} target="_blank"><button mat-button>Buy Now</button></a>
+               <a href={{currentBook.bio}} target="_blank"><button mat-button>Author Website</button></a>
+            </mat-card-actions>
+        </mat-card>
+        </div>
+      </div>
+    </tr></ul>
+
+
+
+
+
+
+

@@ -15,6 +15,7 @@ export class BooksService {
 
   storeBook(isbn: string, book: Book): void {
     this.afs.doc<Book>(`books/${isbn}`).set({
+        isbn: book.isbn,
         title: book.title,
         author: book.author,
         cover: book.cover,

@@ -2,6 +2,7 @@ import { Book } from './book';
 
 export const BOOKS: Book[] = [
     { 
+        isbn: "",
         title: "Tress of the Emerald Sea",
         author: "Brandon Sanderson",
         cover: "assets/bookcover1.jpeg",
@@ -13,6 +14,7 @@ export const BOOKS: Book[] = [
         tag3: "Lighthearted"
     },
     {
+        isbn: "",
         title: "A Wizard of Earthsea",
         author: "Ursula K. Le Guin",
         cover: "assets/bookcover2.jpeg",
@@ -24,6 +26,7 @@ export const BOOKS: Book[] = [
         tag3: "Reflective"
     },
     {
+        isbn: "",
         title: "The Hobbit",
         author: "J. R. R. Tolkien",
         cover: "https://assets-prd.ignimgs.com/2023/03/21/hobbitillustrated-9780063347533-1679422290005.jpg",

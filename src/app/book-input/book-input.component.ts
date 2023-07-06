@@ -15,6 +15,7 @@ export class BookInputComponent implements OnChanges{
 
   ISBN: string = "";
   newBook: Book = {
+    isbn: "",
     title: "",
     author: "",
     cover: "",
@@ -30,7 +31,6 @@ export class BookInputComponent implements OnChanges{
   { 
     
   }
-  
 
   storeBook() {
     this.booksService.storeBook(this.ISBN, this.newBook);
