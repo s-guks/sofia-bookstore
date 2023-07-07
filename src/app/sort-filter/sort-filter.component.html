@@ -40,8 +40,12 @@
   <tr *ngFor="let currentBook of books$ | async">
     <div *ngIf = tags(currentBook)>
         <div *ngIf = searchTOrA(currentBook)>
-            <app-book-card [book] = "currentBook"> </app-book-card>
+            <app-book-card [book] = "currentBook" onload="addABook()"> </app-book-card>
         </div> 
     </div>
   </tr></ul>
+
+  <!--<div *ngIf = getNumBooks()>
+    <h1 class="heading">Sorry, no books match your search.</h1>
+</div>-->
 

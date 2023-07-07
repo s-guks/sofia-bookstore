@@ -21,9 +21,18 @@ export class SortFilterComponent implements OnInit{
   Tone: string[] = [];
   i: number = 0;
   search: string = "";
+  numBooks: number = 0;
   
   ngOnInit(): void {
     this.books$ = this.booksService.readBooks();
+  }
+
+  addABook(): void {
+    this.numBooks++;
+  }
+
+  getNumBooks(): boolean {
+    return this.numBooks == 0;
   }
 
   tags(book: Book): boolean {

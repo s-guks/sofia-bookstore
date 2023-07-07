@@ -31,4 +31,8 @@ export class BooksService {
   readBooks(): Observable<Book[]> {
     return this.afs.collection<Book>("books").valueChanges();
   }
+
+  readBook(isbn: string): Observable<Book | undefined> {
+    return this.afs.doc<Book>(`books/${isbn}`).valueChanges();
+  }
 }
