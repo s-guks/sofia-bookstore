@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Book } from '../book';
-import { Observable, of } from 'rxjs';
+import { Observable, defaultIfEmpty, filter, map, of } from 'rxjs';
 import { BooksService } from '../services/books.service';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { emptyBook } from '../book';
 
 @Component({
   selector: 'app-book-detail',
@@ -12,22 +12,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class BookDetailComponent implements OnInit{
 
-  //books$: Observable<Book[]> = of();
-
-  currentBook: Book = {
-    isbn: "",
-    title: "",
-    author: "",
-    cover: "",
-    desc: "",
-    bio: "",
-    buy: "",
-    tag1: "",
-    tag2: "",
-    tag3: ""
-  };
+  currentBook: Observable<Book> = of(emptyBook);
 
   i: number = 0;
+  isbn: string = this.route.snapshot.paramMap.get('isbn')!;
   
   constructor(private router: Router, private booksService: BooksService, private route: ActivatedRoute) { 
     
@@ -36,19 +24,16 @@ export class BookDetailComponent implements OnInit{
   //queryString = window.location.search;
   //urlParams = new URLSearchParams(this.queryString);
   //isbn: string = "";
-
-  isbn: string = this.route.snapshot.paramMap.get('isbn')!;
-
-  
-  readSingleBook(): Observable<Book | undefined> {
-    //console.log(isbn);
-    return this.booksService.readBook(this.isbn);
-  }
-  
   
   ngOnInit(): void {
-    //this.currentBook = this.readSingleBook(this.isbn);
+    this.fetchBookData()
     // = this.booksService.readBook(this.isbn);
+  }
+
+  fetchBookData(): void {
+    this.currentBook = this.booksService.readBook(this.isbn).pipe(
+      map(bookData => bookData != undefined ? bookData : emptyBook)
+    )
   }
 
   correctBook(book: Book): boolean {

@@ -2,35 +2,41 @@
 
 <ul class="books">
 
-        <div class = "list">
+    <div class = "list">
 
-        <div currentBook = "readSingleBook()">
+    <!-- <div currentBook = "readSingleBook()"> -->
 
-        <div *ngIf="correctBook(currentBook)">
+    <!-- <div *ngIf="correctBook(currentBook)"> -->
 
-        <img src={{currentBook.cover}} alt ="" class = "image"/>
-
+        <img src="{{(currentBook | async)!.cover}}" alt="" class = "image"/>
 
         <mat-card class = "book-card">
             <mat-card-header> 
-                <mat-card-title>{{currentBook.title}}</mat-card-title>
-                <mat-card-subtitle>{{currentBook.author}}</mat-card-subtitle>
+                <mat-card-title>{{(currentBook | async)!.title}}</mat-card-title>
+                <mat-card-subtitle>{{(currentBook | async)!.author}}</mat-card-subtitle>
             </mat-card-header>
             <br>
             <mat-card-content>
-                <p>{{currentBook.desc}}</p>
+                <p>{{(currentBook | async)!.desc}}</p>
                 <br> <br>
                 <p>
-                  #{{currentBook.tag1}}, #{{currentBook.tag2}}, #{{currentBook.tag3}}
+                  #{{(currentBook | async)!.tag1}}, #{{(currentBook | async)!.tag2}}, #{{(currentBook | async)!.tag3}}
                 </p>
                 <br>
             </mat-card-content>
             <mat-card-actions>
-                <a href={{currentBook.buy}} target="_blank"><button mat-button>Buy Now</button></a>
-               <a href={{currentBook.bio}} target="_blank"><button mat-button>Author Website</button></a>
+                <a href="{{(currentBook | async)!.buy}}" target="_blank"><button mat-button>Buy Now</button></a>
+               <a href="{{(currentBook | async)!.bio}}" target="_blank"><button mat-button>Author Website</button></a>
             </mat-card-actions>
-        </mat-card> </div>
-        </div></div></ul>
+        </mat-card> 
+    
+    </div>
+    
+    <!-- </div>
+    
+    </div> -->
+    
+</ul>
 
 
 
